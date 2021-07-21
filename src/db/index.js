@@ -25,4 +25,19 @@ async function initializeDatabase() {
     }
 }
 
-export { pool, initializeDatabase };
+async function deleteDatabase() {
+    console.log("Trying to delete database");
+    const sql = await promises.readFile(
+        './src/db/sql/core/delete.sql',
+        'utf-8',
+    );
+    try {
+        await pool.query(sql);
+        console.log("Database deleted");
+        return;
+    } catch {
+        console.log("Database couldn't be accessed");
+    }
+}
+
+export { pool, initializeDatabase, deleteDatabase };
