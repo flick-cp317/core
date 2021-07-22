@@ -15,7 +15,7 @@ app.listen(port, async () => {
     console.log(`Flick service started [Running on port ${port}]`);
     
     // Uncomment if you want to delete the database
-    // await deleteDatabase();
+    await deleteDatabase();
     
     await initializeDatabase();
 });
