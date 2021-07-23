@@ -47,33 +47,41 @@ theatreRouter.post('/new/', auth, async (req, res) => {
 });
 
 theatreRouter.get('/:theatreid/members/', auth, async (req, res) => {
+    
+    const { theatreid } = req.params;
+
+    let sql, requestArray, result;
+
+    sql = await promises.readFile(
+        './src/db/sql/theatre/getTheatreMembers.sql',
+        'utf-8',
+    );
+    requestArray = [ theatreid ];
     try {
-        const { theatreid } = req.params;
-
-        let sql, requestArray, result;
-
-        sql = await promises.readFile(
-            './src/db/sql/theatre/getTheatreMembers.sql',
-            'utf-8',
-        );
-        requestArray = [ theatreid ];
         result = await pool.query(sql, requestArray);
-
-        let response = {
-            theatreid: theatreid,
-            users: []
-        };
-
-        for (let i = 0; i < result.rows.length; i += 1) {
-            response.users.push(result.rows[i].userid);
-        }
-
-        res.status(200).json({ members: response.users });
     }
-    catch (err) {
-        console.log(err);
-        res.status(500).json({});
+    catch (error){
+        res.status(400).json({});
+        return;
     }
+
+    if (result.rows[0] === undefined){
+        res.status(400).json({});
+        return;
+    }
+
+    let response = {
+        theatreid: theatreid,
+        users: []
+    };
+
+    for (let i = 0; i < result.rows.length; i += 1) {
+        response.users.push(result.rows[i].userid);
+    }
+
+    res.status(200).json({ members: response.users });
+    return;
+
 });
 
 theatreRouter.post('/:theatreid/add/', auth, async (req, res) => {
@@ -127,7 +135,13 @@ theatreRouter.post('/:theatreid/add/', auth, async (req, res) => {
         'utf-8',
     );
     requestArray = [ theatreid, userid ];
-    result = await pool.query(sql, requestArray);
+    try{
+        result = await pool.query(sql, requestArray);
+    }
+    catch (error){
+        res.status(400).json({});
+        return;
+    }
 
     res.status(200).json({});
     return;
