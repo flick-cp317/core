@@ -21,13 +21,11 @@ CREATE TABLE IF NOT EXISTS record (
     movieId UUID REFERENCES movie(movieId),
     action BOOLEAN NOT NULL,
     timestamp TIMESTAMP default current_timestamp
-
 );
 
 CREATE TABLE IF NOT EXISTS theatre (
     theatreId UUID NOT NULL PRIMARY KEY,
     theatreName VARCHAR(30) NOT NULL
-
 );
 
 --remember to update UML doc
@@ -36,8 +34,6 @@ CREATE TABLE IF NOT EXISTS notification (
     notificationId UUID NOT NULL PRIMARY KEY,
     notificationType SMALLINT NOT NULL,
     notifiedUser UUID REFERENCES users(userId)
-
-    
 );
 
 --update UML to show that theatreId is a Foreign Key
@@ -65,5 +61,3 @@ CREATE TABLE IF NOT EXISTS genre (
     --update UML diagram to show that Primary() {columns = genre, movieId} 
     PRIMARY KEY(genre, movieId)
 );
-
-
