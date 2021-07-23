@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { userRouter, theatreRouter } from './api'; 
+import { userRouter, theatreRouter, recordRouter } from './api'; 
 import { deleteDatabase, initializeDatabase } from './db';
 
 const app = express();
@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 app.use('/api/user', userRouter);
 app.use('/api/theatre', theatreRouter);
+app.use('/api/record', recordRouter);
 
 const port = 8080;
 

@@ -10,6 +10,35 @@ theatreRouter.get('/', auth, async (req, res) => {
     return;
 });
 
+theatreRouter.get('/:theatreid/name/', auth, async (req, res) => {
+    const { theatreid } = req.params;
+
+    let sql, requestArray, result;
+    
+    sql = await promises.readFile(
+        './src/db/sql/theatre/getTheatre.sql',
+        'utf-8',
+    );
+    requestArray = [ theatreid ];
+
+    try {
+        result = await pool.query(sql, requestArray);
+    }
+    catch (error) {
+        res.status(400).json({});
+        return;
+    }
+
+    if (result.rows[0] === undefined) {
+        res.status(400).json({});
+        return;
+    }
+
+    res.status(200).json(result.rows[0].theatrename);
+
+    return;
+});
+
 theatreRouter.post('/new/', auth, async (req, res) => {
     try {
         const userid = req.user.id;
