@@ -9,4 +9,15 @@ const Genre = {
     Romance: 7,
 };
 
-export { Genre };
+const GenreName = {
+    0: "Action",
+    1: "Adventure",
+    2: "Comedy",
+    3: "Drama",
+    4: "Family",
+    5: "Fantasy",
+    6: "Horror",
+    7: "Romance",
+};
+
+export { Genre, GenreName };

@@ -4,6 +4,7 @@ import { pool } from '../../db';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import auth from './auth';
+import { addUser } from './addUser';
 
 const userRouter = Router();
 
@@ -39,15 +40,7 @@ userRouter.post('/new', async (req, res) => {
 
     // See if the user is in the database
     if (result.rows[0] === undefined) {
-        // The username is not in the database; a user can be created
-        const passwordHash = await bcrypt.hash(password, 10);
-        
-        sql = await promises.readFile(
-            './src/db/sql/user/addUser.sql',
-            'utf-8',
-        );
-        requestArray = [ username, passwordHash ];
-        result = await pool.query(sql, requestArray);
+        await addUser(username, password);
 
         res.status(200).json({});
         return;
