@@ -1,0 +1,1 @@
+SELECT theatreId FROM theatre_user WHERE userId = $1;
