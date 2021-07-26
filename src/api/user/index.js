@@ -104,4 +104,65 @@ userRouter.post('/login', async (req, res) => {
     }
 });
 
+userRouter.put('/:userid/username', auth, async (req, res) => {
+    
+    const { userid } = req.params;
+    const { newUsername } = req.body;
+    
+    // length of new username is not valid
+    if (newUsername.length < 3 || newUsername.length > 30){
+        res.status(400).json({});
+            return;
+    }
+
+    // userid in params does not match the token
+    if (userid !== req.user.id){
+        res.status(401).json({});
+            return;
+    }
+    let sql, requestArray, result;
+    
+    sql = await promises.readFile(
+        './src/db/sql/user/getUserFromId.sql',
+        'utf-8',
+    );
+    requestArray = [ userid ];
+    // Search for user in the database
+    try {
+        result = await pool.query(sql, requestArray);
+    }
+    catch (error){
+        res.status(400).json({});
+            return;
+    }
+
+    const currUsername = result.rows[0].username;
+
+    // check to see if the updated username is the same as the current
+    if (newUsername === currUsername){
+        res.status(400).json({});
+            return;
+    }
+
+    console.log(currUsername);
+    console.log(newUsername);
+
+    sql = await promises.readFile(
+        './src/db/sql/user/updateUsername.sql',
+        'utf-8',
+    );
+    requestArray = [ newUsername,userid ];
+    // Search for user in the database
+    try {
+        result = await pool.query(sql, requestArray);
+    }
+    catch (error){
+        res.status(400).json({});
+            return;
+    }
+
+    res.status(200).json();
+    return;
+});
+
 export default userRouter;
