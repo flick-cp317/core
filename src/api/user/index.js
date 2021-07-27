@@ -8,11 +8,13 @@ import { addUser } from './addUser';
 
 const userRouter = Router();
 
+// test API call
 userRouter.get('/id', auth, async (req, res) => {
     res.status(200).json(req.user);
     return;
 });
 
+// create a new user
 userRouter.post('/new', async (req, res) => {
     const { username, password } = req.body;
     
@@ -52,6 +54,7 @@ userRouter.post('/new', async (req, res) => {
     }
 });
 
+// login in the user
 userRouter.post('/login', async (req, res) => {
     const { username, password } = req.body;
     
@@ -104,6 +107,7 @@ userRouter.post('/login', async (req, res) => {
     }
 });
 
+// set a new username for the desired userid
 userRouter.put('/:userid/username', auth, async (req, res) => {
     
     const { userid } = req.params;
@@ -171,6 +175,7 @@ userRouter.put('/:userid/username', auth, async (req, res) => {
     return;
 });
 
+// get user info
 userRouter.get('/:userid', auth, async (req, res) => {
 
     const { userid } = req.params;

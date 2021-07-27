@@ -40,11 +40,6 @@ const Movies = [
         "genres": [ Genre.Drama, Genre.Romance ]
     },
     {
-        "title": "Inception",
-        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
-        "genres": [ Genre.Action, Genre.Adventure ] 
-    },
-    {
         "title": "Once Upon a Time in Hollywood",
         "description": "A faded television actor and his stunt double strive to achieve fame and success in the final years of Hollywood's Golden Age in 1969 Los Angeles.",
         "genres": [ Genre.Comedy, Genre.Drama ] 
