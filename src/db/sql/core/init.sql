@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS record (
     userId UUID REFERENCES users(userId),
     movieId UUID REFERENCES movie(movieId),
     action BOOLEAN NOT NULL,
-    timestamp TIMESTAMP default current_timestamp
+    timestamp TIMESTAMP default current_timestamp,
+    PRIMARY KEY(userId, movieId)
 );
 
 CREATE TABLE IF NOT EXISTS theatre (
