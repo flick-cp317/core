@@ -109,6 +109,12 @@ userRouter.put('/:userid/username', auth, async (req, res) => {
     const { userid } = req.params;
     const { newUsername } = req.body;
     
+    // Ensuring good data
+    if (username === undefined) {
+        res.status(400).json({});
+        return;
+    }
+
     // length of new username is not valid
     if (newUsername.length < 3 || newUsername.length > 30){
         res.status(400).json({});
@@ -162,6 +168,37 @@ userRouter.put('/:userid/username', auth, async (req, res) => {
     }
 
     res.status(200).json();
+    return;
+});
+
+userRouter.get('/:userid', auth, async (req, res) => {
+
+    const { userid } = req.params;
+
+    // Ensuring good data
+    if (userid === undefined) {
+        res.status(400).json({});
+        return;
+    }
+
+    let sql, requestArray, result;
+    
+    sql = await promises.readFile(
+        './src/db/sql/user/getUserFromId.sql',
+        'utf-8',
+    );
+    requestArray = [ userid ];
+    // Search for user in the database
+    try {
+        result = await pool.query(sql, requestArray);
+    }
+    catch (error){
+        res.status(400).json({});
+            return;
+    }
+
+    res.status(200).json({username: result.rows[0].username, userid: result.rows[0].userid});
+
     return;
 });
 
