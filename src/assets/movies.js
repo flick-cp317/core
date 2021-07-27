@@ -4,10 +4,10 @@ import { Genre } from "../genres";
 GENRE TALLIES
 ---------------
 Action       8
-Adventure    7
-Comedy       6
+Adventure    8
+Comedy       7
 Drama        13
-Family       2
+Family       4
 Fantasy      4
 Horror       5
 Romance      4
@@ -159,7 +159,21 @@ const Movies = [
         "description": "A pair of interwoven stories set in the past and present follow an ambitious journalist determined to solve the mystery of a forbidden love affair at the center of a trove of secret love letters from 1965.",
         "genres": [ Genre.Drama, Genre.Romance ]
     },
-    
+    {
+        "title": "Space Jam: A New Legacy",
+        "description": "A rogue artificial intelligence kidnaps the son of famed basketball player LeBron James, who then has to work with Bugs Bunny to win a basketball game.",
+        "genres": [ Genre.Family, Genre.Comedy ]
+    },
+    {
+        "title": "The Boss Baby: Family Business",
+        "description": "The Templeton brothers have become adults and drifted away from each other, but a new boss baby with a cutting-edge approach is about to bring them together again - and inspire a new family business.",
+        "genres": [ Genre.Adventure, Genre.Family ]
+    },
+    {
+        "title": "Dellamorte Dellamore",
+        "description": "A cemetery man must kill the dead a second time when they become zombies.",
+        "genres": [ Genre.Comedy, Genre.Horror ]
+    },
 ];
 
 export { Movies };
