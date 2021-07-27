@@ -5,12 +5,13 @@ import auth from '../user/auth';
 
 const theatreRouter = Router();
 
+// test API call
 theatreRouter.get('/', auth, async (req, res) => {
     res.status(200).json({});
     return;
 });
 
-//responds with the name of a specific theatre
+// responds with the name of a specific theatre
 theatreRouter.get('/:theatreid/name/', auth, async (req, res) => {
     const { theatreid } = req.params;
 
@@ -111,6 +112,7 @@ theatreRouter.post('/new/', auth, async (req, res) => {
     }
 });
 
+// return the list of theatre members in the desired theatre
 theatreRouter.get('/:theatreid/members/', auth, async (req, res) => {
     
     const { theatreid } = req.params;
@@ -149,6 +151,7 @@ theatreRouter.get('/:theatreid/members/', auth, async (req, res) => {
 
 });
 
+// add a user to the desired theatre id
 theatreRouter.post('/:theatreid/add/', auth, async (req, res) => {
     const {user} = req.body
     const {theatreid} = req.params
