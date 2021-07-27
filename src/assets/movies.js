@@ -3,13 +3,13 @@ import { Genre } from "../genres";
 /*
 GENRE TALLIES
 ---------------
-Action       8
-Adventure    8
-Comedy       7
-Drama        13
-Family       4
+Action       25
+Adventure    21
+Comedy       8
+Drama        15
+Family       5
 Fantasy      4
-Horror       5
+Horror       7
 Romance      4
 */
 
@@ -169,6 +169,96 @@ const Movies = [
         "description": "A cemetery man must kill the dead a second time when they become zombies.",
         "genres": [ Genre.Comedy, Genre.Horror ]
     },
+    {
+        "title": "Black Widow",
+        "description": "Natasha Romanoff confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "Snake Eyes",
+        "description": "A G.I. Joe spin-off centered around the character of Snake Eyes.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "Gunpowder Milkshake",
+        "description": "Three generations of women fight back against those who could take everything from them.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "The Forever Purge",
+        "description": "All the rules are broken as a sect of lawless marauders decides that the annual Purge does not stop at daybreak and instead should never end.",
+        "genres": [ Genre.Action, Genre.Horror ]
+    },
+    {
+        "title": "The Tomorrow War",
+        "description": "A family man is drafted to fight in a future war where the fate of humanity relies on his ability to confront the past.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "The Suicide Squad",
+        "description": "Supervillains join the super-secret, super-shady Task Force X as they are dropped off at the remote, enemy-infused island of Corto Maltese.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "F9: The Fast Saga",
+        "description": "Cipher enlists the help of Jakob, Dom's younger brother to take revenge on Dom and his team.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "The Flash",
+        "description": "After being struck by lightning, Barry Allen wakes up from his coma to discover he's been given the power of super speed, becoming the next Flash, fighting crime in Central City.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "Wrath of Man",
+        "description": "The plot follows H, a cold and mysterious character working at a cash truck company responsible for moving hundreds of millions of dollars around Los Angeles each week.",
+        "genres": [ Genre.Action, Genre.Drama ]
+    },
+    {
+        "title": "Tenet",
+        "description": "A Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+        "genres": [ Genre.Action, Genre.Drama ]
+    },
+    {
+        "title": "Avengers: Endgame",
+        "description": "With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "Avatar",
+        "description": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "Black Panther",
+        "description": "T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "Jurassic World",
+        "description": "A new theme park, built on the original site of Jurassic Park, creates a genetically modified hybrid dinosaur, the Indominus Rex, which escapes containment and goes on a killing spree.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "Incredibles 2",
+        "description": "The Incredibles family takes on a new mission which involves a change in family roles: Bob Parr (Mr. Incredible) must manage the house while his wife Helen (Elastigirl) goes out to save the world.",
+        "genres": [ Genre.Action, Genre.Family ]
+    },
+    {
+        "title": "Captain Marvel",
+        "description": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "The Hunger Games: Catching Fire",
+        "description": "Katniss Everdeen and Peeta Mellark become targets of the Capitol after their victory in the 74th Hunger Games sparks a rebellion in the Districts of Panem.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    },
+    {
+        "title": "Pirates of the Caribbean: Dead Man's Chest",
+        "description": "Jack Sparrow races to recover the heart of Davy Jones to avoid enslaving his soul to Jones' service, as other friends and foes seek the heart for their own agenda as well.",
+        "genres": [ Genre.Action, Genre.Adventure ]
+    }
 ];
 
 export { Movies };
