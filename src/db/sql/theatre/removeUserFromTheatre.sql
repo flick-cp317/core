@@ -1,0 +1,1 @@
+DELETE FROM theatre_user WHERE theatreId=$1 AND userId=$2;
