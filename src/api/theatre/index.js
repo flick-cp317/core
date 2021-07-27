@@ -76,6 +76,7 @@ theatreRouter.get('/user/:userid/', auth, async (req, res) => {
     return;
 });
 
+// add a new theatre
 theatreRouter.post('/new/', auth, async (req, res) => {
     try {
         const userid = req.user.id;
@@ -200,6 +201,70 @@ theatreRouter.post('/:theatreid/add/', auth, async (req, res) => {
 
     sql = await promises.readFile(
         './src/db/sql/theatre/addUserToTheatre.sql',
+        'utf-8',
+    );
+    requestArray = [ theatreid, userid ];
+    try{
+        result = await pool.query(sql, requestArray);
+    }
+    catch (error){
+        res.status(400).json({});
+        return;
+    }
+
+    res.status(200).json({});
+    return;
+});
+
+// remove a user to the desired theatre id
+theatreRouter.delete('/:theatreid/remove/', auth, async (req, res) => {
+    const {user} = req.body
+    const {theatreid} = req.params
+
+    // user parameter is empty
+    if (user === undefined){
+        res.status(400).json({});
+        return;
+    }
+
+    let sql, requestArray, result;
+    
+    sql = await promises.readFile(
+        './src/db/sql/user/getUserFromUsername.sql',
+        'utf-8',
+    );
+    requestArray = [ user ];
+    result = await pool.query(sql, requestArray);
+    
+    // if the user does not exist, send a 400
+    if (result.rows[0] === undefined){
+        res.status(400).json({});
+        return;
+    }
+
+    const userid = result.rows[0].userid
+
+    sql = await promises.readFile(
+        './src/db/sql/theatre/getTheatreMember.sql',
+        'utf-8',
+    );
+    requestArray = [ theatreid, userid ];
+    try {
+        result = await pool.query(sql, requestArray);
+    }
+    catch (error){
+        res.status(400).json({});
+        return;
+    }
+    
+    // user is already is not in the theatre
+    if (result.rows[0] === undefined){
+        res.status(400).json({});
+        return;
+    }
+
+    sql = await promises.readFile(
+        './src/db/sql/theatre/removeUserFromTheatre.sql',
         'utf-8',
     );
     requestArray = [ theatreid, userid ];
