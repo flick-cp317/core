@@ -114,7 +114,7 @@ userRouter.put('/:userid/username', auth, async (req, res) => {
     const { newUsername } = req.body;
     
     // Ensuring good data
-    if (username === undefined) {
+    if (newUsername === undefined) {
         res.status(400).json({});
         return;
     }
