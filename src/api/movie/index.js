@@ -5,7 +5,7 @@ import auth from '../user/auth';
 
 const movieRouter = Router();
 
-// responds with the name of a specific theatre
+// Responds with details of a specific movie
 movieRouter.get('/:movieid/', auth, async (req, res) => {
     const { movieid } = req.params;
 

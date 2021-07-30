@@ -1,13 +1,12 @@
 import { Router } from 'express';
-import { promises } from 'fs';
-import { pool } from '../../db';
 import auth from '../user/auth';
 import { addRecord } from './addRecord';
 
 const recordRouter = Router();
 
 recordRouter.post('/', auth, async (req, res) => {
-    const {user,movie,action} = req.body;
+    const { user, movie, action } = req.body;
+
     if (user === undefined || movie === undefined || action === undefined){
         res.status(400).json({});
         return;
@@ -18,17 +17,16 @@ recordRouter.post('/', auth, async (req, res) => {
         return;
     }
 
-    try{
+    try {
         await addRecord(user, movie, action);
-    }catch(err){
+    } catch (err) {
         console.log(err);
         res.status(400).json({});
         return;
     }
     
-    res.status(200).json(req.user);
+    res.status(200).json({});
     return;
 });
-
 
 export default recordRouter;
