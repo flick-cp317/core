@@ -280,4 +280,89 @@ theatreRouter.delete('/:theatreid/remove/', auth, async (req, res) => {
     return;
 });
 
+theatreRouter.get("/:theatreid/matches/", auth, async (req, res) => {
+    const { theatreid } = req.params;
+    
+    if (theatreid === undefined) {
+        res.status(400).json({});
+        return;
+    }
+
+    let sql, requestArray, result;
+    
+    sql = await promises.readFile(
+        './src/db/sql/theatre/getTheatreMembers.sql',
+        'utf-8',
+    );
+    requestArray = [ theatreid ];
+    
+    // Getting theatre members
+    try {
+        result = await pool.query(sql, requestArray);
+    } catch (err) {
+        res.status(400).json({});
+        return;
+    }
+
+    const theatreSize = result.rows.length;
+    
+    // Making sure theatre exists
+    if (theatreSize === 0) {
+        res.status(400).json({});
+        return;
+    }
+
+    // Constructing tree of theatre
+    let theatreMatchTree = {};
+    
+    for (let i = 0; i < theatreSize; i += 1) {
+        theatreMatchTree[result.rows[i].userid] = [];
+    }
+
+    let theatreUsers = Object.keys(theatreMatchTree);
+
+    sql = await promises.readFile(
+        './src/db/sql/record/getUserMatches.sql',
+        'utf-8',
+    );
+
+    for (let i = 0; i < theatreSize; i += 1) {
+        requestArray = [ theatreUsers[i] ];
+        try {
+            result = await pool.query(sql, requestArray);
+        } catch (err) {
+            // This should never happen
+            res.status(500).json({ error: "This error implies a lack of data integrity in the database. Let the backend team know about this ASAP." });
+        }
+        
+        for (let j = 0; j < result.rows.length; j += 1) {
+            theatreMatchTree[theatreUsers[i]].push(result.rows[j].movieid);
+        }
+    }
+
+    console.log("============ Theatre Match Tree ============");
+    console.log(theatreMatchTree);
+    console.log("============================================");
+
+    let matches = [];
+
+    // Sorting through theatre tree to figure out the theatre matches
+    for (let i = 0; i < theatreMatchTree[theatreUsers[0]].length; i += 1) {
+        let currentMatch = theatreMatchTree[theatreUsers[0]][i];
+        let eligible = true;
+        for (let j = 1; j < theatreUsers.length; j += 1) {
+            if (theatreMatchTree[theatreUsers[j]].indexOf(currentMatch) === -1) {
+                eligible = false;
+                break;
+            }
+        }
+        if (eligible === true) {
+            matches.push(currentMatch);
+        }
+    }
+
+    res.status(200).json(matches);
+    return;
+});
+
 export default theatreRouter;
