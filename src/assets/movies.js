@@ -7,10 +7,10 @@ Action       29
 Adventure    35
 Comedy       33
 Drama        26
-Family       26
-Fantasy      13
+Family       25
+Fantasy      11
 Horror       8
-Romance      9
+Romance      8
 */
 
 const Movies = [
@@ -75,11 +75,6 @@ const Movies = [
         "genres": [ Genre.Action ]
     },
     {
-        "title": "Spirited Away",
-        "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
-        "genres": [ Genre.Fantasy, Genre.Family ]
-    },
-    {
         "title": "Saving Private Ryan",
         "description": "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
         "genres": [ Genre.Drama ]
@@ -138,11 +133,6 @@ const Movies = [
         "title": "House of the Witch",
         "description": "A group of high-school kids set out to play a Halloween prank at an abandoned house, but once they enter they become victims of a demonic witch who has set her wrath upon them.",
         "genres": [ Genre.Fantasy, Genre.Horror ]
-    },
-    {
-        "title": "Twilight",
-        "description": "When Bella Swan moves to a small town in the Pacific Northwest, she falls in love with Edward Cullen, a mysterious classmate who reveals himself to be a 108-year-old vampire.",
-        "genres": [ Genre.Fantasy, Genre.Romance ]
     },
     {
         "title": "The French Dispatch",
