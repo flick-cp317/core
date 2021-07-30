@@ -3,14 +3,14 @@ import { Genre } from "../genres";
 /*
 GENRE TALLIES
 ---------------
-Action       29
-Adventure    35
-Comedy       33
-Drama        26
-Family       25
-Fantasy      11
-Horror       8
-Romance      8
+Action       33
+Adventure    43
+Comedy       41
+Drama        49
+Family       26
+Fantasy      26
+Horror       25
+Romance      25
 */
 
 const Movies = [
@@ -483,6 +483,241 @@ const Movies = [
         "title": "Harry Potter and the Order of the Phoenix",
         "description": "With their warning about Lord Voldemort's return scoffed at, Harry and Dumbledore are targeted by the Wizard authorities as an authoritarian bureaucrat slowly seizes power at Hogwarts.",
         "genres": [ Genre.Family, Genre.Fantasy ]
+    },
+    {
+        "title": "Jumanji: Welcome to the Jungle",
+        "description": "Four teenagers are sucked into a magical video game, and the only way they can escape is to work together to finish the game.",
+        "genres": [ Genre.Fantasy, Genre.Adventure ]
+    },
+    {
+        "title": "The Mummy",
+        "description": "An American serving in the French Foreign Legion accidentally awakens a mummy who begins to wreak havoc as he searches for the reincarnation of his long-lost love.",
+        "genres": [ Genre.Fantasy, Genre.Adventure ]
+    },
+    {
+        "title": "Kong: Skull Island",
+        "description": "After the Vietnam war, a team of scientists explores an uncharted island in the Pacific, venturing into the domain of the mighty Kong, and must fight to escape a primal Eden.",
+        "genres": [ Genre.Fantasy, Genre.Adventure ]
+    },
+    {
+        "title": "Doctor Strange",
+        "description": "While on a journey of physical and spiritual healing, a brilliant neurosurgeon is drawn into the world of the mystic arts.",
+        "genres": [ Genre.Fantasy, Genre.Adventure ]
+    },
+    {
+        "title": "The Hobbit: The Desolation of Smaug",
+        "description": "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug.",
+        "genres": [ Genre.Fantasy, Genre.Adventure ]
+    },
+    {
+        "title": "Scott Pilgrim vs. the World",
+        "description": "In a magically realistic version of Toronto, a young man must defeat his new girlfriend's seven evil exes one by one in order to win her heart.",
+        "genres": [ Genre.Fantasy, Genre.Comedy ]
+    },
+    {
+        "title": "The Green Mile",
+        "description": "The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.",
+        "genres": [ Genre.Fantasy, Genre.Drama ]
+    },
+    {
+        "title": "Jumanji: The Next Level",
+        "description": "As they return to rescue one of their own, the players will have to brave parts unknown from arid deserts to snowy mountains, to escape the world's most dangerous game.",
+        "genres": [ Genre.Fantasy, Genre.Action ]
+    },
+    {
+        "title": "Encanto",
+        "description": "A young Colombian girl has to face the frustration of being the only member of her family without magical powers.",
+        "genres": [ Genre.Fantasy, Genre.Adventure ]
+    },
+    {
+        "title": "Shazam!",
+        "description": "A newly fostered young boy in search of his mother instead finds unexpected super powers and soon gains a powerful enemy.",
+        "genres": [ Genre.Fantasy, Genre.Comedy ]
+    },
+    {
+        "title": "Thor: The Dark World",
+        "description": "When the Dark Elves attempt to plunge the universe into darkness, Thor must embark on a perilous and personal journey that will reunite him with doctor Jane Foster.",
+        "genres": [ Genre.Fantasy, Genre.Adventure ]
+    },
+    {
+        "title": "Midnight in Paris",
+        "description": "While on a trip to Paris with his fiancée's family, a nostalgic screenwriter finds himself mysteriously going back to the 1920s every day at midnight.",
+        "genres": [ Genre.Fantasy, Genre.Romance ]
+    },
+    {
+        "title": "Masters of the Universe",
+        "description": "The heroic warrior He-Man battles against the evil lord Skeletor and his armies of darkness for control of Castle Grayskull.",
+        "genres": [ Genre.Fantasy, Genre.Adventure ]
+    },
+    {
+        "title": "Night at the Museum",
+        "description": "A newly recruited night security guard at the Museum of Natural History discovers that an ancient curse causes the animals and exhibits on display to come to life and wreak havoc.",
+        "genres": [ Genre.Fantasy, Genre.Family ]
+    },
+    {
+        "title": "The Empty Man",
+        "description": "On the trail of a missing girl, an ex-cop comes across a secretive group attempting to summon a terrifying supernatural entity.",
+        "genres": [ Genre.Horror ]
+    },
+    {
+        "title": "A Quiet Place",
+        "description": "In a post-apocalyptic world, a family is forced to live in silence while hiding from monsters with ultra-sensitive hearing.",
+        "genres": [ Genre.Horror, Genre.Drama ]
+    },
+    {
+        "title": "Escape Room",
+        "description": "Six strangers find themselves in a maze of deadly mystery rooms and must use their wits to survive.",
+        "genres": [ Genre.Horror, Genre.Action ]
+    },
+    {
+        "title": "The Lost Boys",
+        "description": "After moving to a new town, two brothers discover that the area is a haven for vampires.",
+        "genres": [ Genre.Horror, Genre.Comedy ]
+    },
+    {
+        "title": "Don't Breathe",
+        "description": "Hoping to walk away with a massive fortune, a trio of thieves break into the house of a blind man who isn't as helpless as he seems.",
+        "genres": [ Genre.Horror, Genre.Action ]
+    },
+    {
+        "title": "Alien",
+        "description": "The crew is attacked by a mysterious life form and they soon realize that its life cycle has merely begun.",
+        "genres": [ Genre.Horror, Genre.Fantasy ]
+    },
+    {
+        "title": "Raw",
+        "description": "A young woman, studying to be a vet, develops a craving for human flesh.",
+        "genres": [ Genre.Drama, Genre.Horror ]
+    },
+    {
+        "title": "Hereditary",
+        "description": "A grieving family is haunted by tragic and disturbing occurrences.",
+        "genres": [ Genre.Drama, Genre.Horror ]
+    },
+    {
+        "title": "Hellboy",
+        "description": "Based on the graphic novels by Mike Mignola, Hellboy, caught between the worlds of the supernatural and human, battles an ancient sorceress bent on revenge.",
+        "genres": [ Genre.Horror, Genre.Action ]
+    },
+    {
+        "title": "Doctor Sleep",
+        "description": "Dan Torrance must protect a young girl with similar powers from a cult known as The True Knot, who prey on children with powers to remain immortal.",
+        "genres": [ Genre.Horror, Genre.Drama ]
+    },
+    {
+        "title": "Split",
+        "description": "Three girls are kidnapped by a man with a diagnosed 23 distinct personalities. They must try to escape before the apparent emergence of a frightful new 24th.",
+        "genres": [ Genre.Horror, Genre.Drama ]
+    },
+    {
+        "title": "It",
+        "description": "A group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry.",
+        "genres": [ Genre.Horror, Genre.Drama ]
+    },
+    {
+        "title": "The Purge",
+        "description": "A wealthy family is held hostage for harboring the target of a murderous syndicate during the Purge, a 12-hour period in which any and all crime is legal.",
+        "genres": [ Genre.Horror, Genre.Drama ]
+    },
+    {
+        "title": "Get Out",
+        "description": "A young African-American visits his white girlfriend's parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.",
+        "genres": [ Genre.Horror, Genre.Drama ]
+    },
+    {
+        "title": "The Shining",
+        "description": "A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence.",
+        "genres": [ Genre.Horror, Genre.Drama ]
+    },
+    {
+        "title": "Us",
+        "description": "A family's serene beach vacation turns to chaos when their doppelgängers appear and begin to terrorize them.",
+        "genres": [ Genre.Horror, Genre.Drama ]
+    },
+    {
+        "title": "Mother!",
+        "description": "A couple's relationship is tested when uninvited guests arrive at their home, disrupting their tranquil existence.",
+        "genres": [ Genre.Horror, Genre.Drama ]
+    },
+    {
+        "title": "Titanic",
+        "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {
+        "title": "Little Women",
+        "description": "Jo March reflects back and forth on her life, telling the beloved story of the March sisters - four young women, each determined to live life on her own terms.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {
+        "title": "After",
+        "description": "A young woman falls for a guy with a dark secret and the two embark on a rocky relationship.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {   
+        "title": "Romeo + Juliet",
+        "description": "Shakespeare's famous play is updated to the hip modern suburb of Verona still retaining its original dialogue.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {   
+        "title": "Clueless",
+        "description": "Seeing herself as a matchmaker, Cher first coaxes two teachers into dating each other.",
+        "genres": [ Genre.Romance, Genre.Comedy ]
+    },
+    {   
+        "title": "True Romance",
+        "description": "In Detroit, a lonely pop culture geek marries a call girl, steals cocaine from her pimp, and tries to sell it in Hollywood.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {   
+        "title": "Call Me by Your Name",
+        "description": "In 1980s Italy, romance blossoms between a seventeen-year-old student and the older man hired as his father's research assistant.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {   
+        "title": "Our Friend",
+        "description": "After receiving life-altering news, a couple finds unexpected support from their best friend, who puts his own life on hold and moves into their family home.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {   
+        "title": "The Girl Next Door",
+        "description": "A teenager's dreams come true when a former porn star moves in next door and they fall in love.",
+        "genres": [ Genre.Romance, Genre.Comedy ]
+    },
+    {   
+        "title": "Fifty Shades of Grey",
+        "description": "Literature student Anastasia Steele's life changes forever when she meets handsome, yet tormented, billionaire Christian Grey.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {   
+        "title": "The Blue Lagoon",
+        "description": "In the Victorian period, two children are shipwrecked on a tropical island in the South Pacific with no adults to guide them.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {   
+        "title": "The 40-Year-Old Virgin",
+        "description": "Goaded by his buddies, a nerdy guy who's never 'done the deed' only finds the pressure mounting when he meets a single mother.",
+        "genres": [ Genre.Romance, Genre.Comedy ]
+    },
+    {   
+        "title": "Bridesmaids",
+        "description": "Competition between the maid of honor and a bridesmaid, over who is the bride's best friend, threatens to upend the life of an out-of-work pastry chef.",
+        "genres": [ Genre.Romance, Genre.Comedy ]
+    },
+    {   
+        "title": "Love Actually",
+        "description": "Follows the lives of eight very different couples in dealing with their love lives in various loosely interrelated tales all set during a frantic month before Christmas.",
+        "genres": [ Genre.Romance, Genre.Comedy ]
+    },
+    {   
+        "title": "Pride & Prejudice",
+        "description": "Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class.",
+        "genres": [ Genre.Romance, Genre.Drama ]
+    },
+    {   
+        "title": "Dirty Dancing",
+        "description": "Spending the summer at a Catskills resort with her family, Frances 'Baby' Houseman falls in love with the camp's dance instructor, Johnny Castle.",
+        "genres": [ Genre.Romance, Genre.Drama ]
     },
     
 ];
