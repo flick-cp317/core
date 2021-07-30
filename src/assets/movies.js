@@ -3,14 +3,14 @@ import { Genre } from "../genres";
 /*
 GENRE TALLIES
 ---------------
-Action       25
-Adventure    21
-Comedy       8
-Drama        15
-Family       5
-Fantasy      4
-Horror       7
-Romance      4
+Action       29
+Adventure    35
+Comedy       33
+Drama        26
+Family       25
+Fantasy      11
+Horror       8
+Romance      8
 */
 
 const Movies = [
@@ -75,11 +75,6 @@ const Movies = [
         "genres": [ Genre.Action ]
     },
     {
-        "title": "Spirited Away",
-        "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
-        "genres": [ Genre.Fantasy, Genre.Family ]
-    },
-    {
         "title": "Saving Private Ryan",
         "description": "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
         "genres": [ Genre.Drama ]
@@ -138,11 +133,6 @@ const Movies = [
         "title": "House of the Witch",
         "description": "A group of high-school kids set out to play a Halloween prank at an abandoned house, but once they enter they become victims of a demonic witch who has set her wrath upon them.",
         "genres": [ Genre.Fantasy, Genre.Horror ]
-    },
-    {
-        "title": "Twilight",
-        "description": "When Bella Swan moves to a small town in the Pacific Northwest, she falls in love with Edward Cullen, a mysterious classmate who reveals himself to be a 108-year-old vampire.",
-        "genres": [ Genre.Fantasy, Genre.Romance ]
     },
     {
         "title": "The French Dispatch",
@@ -258,7 +248,243 @@ const Movies = [
         "title": "Pirates of the Caribbean: Dead Man's Chest",
         "description": "Jack Sparrow races to recover the heart of Davy Jones to avoid enslaving his soul to Jones' service, as other friends and foes seek the heart for their own agenda as well.",
         "genres": [ Genre.Action, Genre.Adventure ]
-    }
+    },
+    {
+        "title": "Dune",
+        "description": "A Duke's son leads desert warriors against the galactic emperor and his father's evil nemesis when they assassinate his father and free their desert world from the emperor's rule.",
+        "genres": [ Genre.Adventure, Genre.Action ]
+    },
+    {
+        "title": "The Green Knight",
+        "description": "A fantasy re-telling of the medieval story of Sir Gawain and the Green Knight.",
+        "genres": [ Genre.Adventure, Genre.Drama ]
+    },
+    {
+        "title": "Jaws",
+        "description": "When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
+        "genres": [ Genre.Adventure, Genre.Drama ]
+    },
+    {
+        "title": "Inglourious Basterds",
+        "description": "In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same.",
+        "genres": [ Genre.Adventure, Genre.Drama ]
+    },
+    {
+        "title": "American Psycho",
+        "description": "A wealthy New York City investment banking executive, Patrick Bateman, hides his alternate psychopathic ego from his co-workers and friends as he delves deeper into his violent, hedonistic fantasies.",
+        "genres": [ Genre.Comedy, Genre.Drama ]
+    },
+    {
+        "title": "Almost Famous",
+        "description": "A high-school boy is given the chance to write a story for Rolling Stone Magazine about an up-and-coming rock band as he accompanies them on their concert tour.",
+        "genres": [ Genre.Comedy, Genre.Adventure ]
+    },
+    {
+        "title": "JoJo Rabbit",
+        "description": "A young boy in Hitler's army finds out his mother is hiding a Jewish girl in their home.",
+        "genres": [ Genre.Comedy, Genre.Drama ]
+    },
+    {
+        "title": "Green Book",
+        "description": "A working-class Italian-American bouncer becomes the driver of an African-American classical pianist on a tour of venues through the 1960s American South.",
+        "genres": [ Genre.Comedy, Genre.Drama ]
+    },
+    {
+        "title": "Deadpool",
+        "description": "A wisecracking mercenary gets experimented on and becomes immortal but ugly, and sets out to track down the man who ruined his looks.",
+        "genres": [ Genre.Comedy, Genre.Action ]
+    },
+    {
+        "title": "Austin Powers: International Man of Mystery ",
+        "description": "A world-class playboy and part-time secret agent from the 1960s emerges after thirty years in a cryogenic state to battle with his nemesis Dr. Evil.",
+        "genres": [ Genre.Comedy, Genre.Adventure ]
+    },
+    {
+        "title": "Just Go with It",
+        "description": "On a weekend trip to Hawaii, a plastic surgeon convinces his loyal assistant to pose as his soon-to-be-divorced wife in order to cover up a careless lie he told to his much-younger girlfriend.",
+        "genres": [ Genre.Comedy, Genre.Romance ]
+    },
+    {
+        "title": "Mean Girls",
+        "description": "Cady Heron is a hit with The Plastics, the A-list girl clique at her new school, until she makes the mistake of falling for Aaron Samuels, the ex-boyfriend of alpha Plastic Regina George.",
+        "genres": [ Genre.Comedy]
+    },
+    {
+        "title": "Dazed and Confused",
+        "description": "The adventures of high school and junior high students on the last day of school in May 1976.",
+        "genres": [ Genre.Comedy]
+    },
+    {
+        "title": "Deadpool 2",
+        "description": "Foul-mouthed mutant mercenary Wade Wilson (a.k.a. Deadpool) assembles a team of fellow mutant rogues to protect a young boy with supernatural abilities from the brutal, time-traveling cyborg Cable.",
+        "genres": [ Genre.Comedy, Genre.Action ]
+    },
+    {
+        "title": "Legally Blonde",
+        "description": "Elle Woods, a fashionable sorority queen, is dumped by her boyfriend. She decides to follow him to law school. While she is there, she figures out that there is more to her than just looks.",
+        "genres": [ Genre.Comedy, Genre.Romance ]
+    },
+    {
+        "title": "Crazy Rich Asians",
+        "description": "This contemporary romantic comedy, based on a global bestseller, follows native New Yorker Rachel Chu to Singapore to meet her boyfriend's family.",
+        "genres": [ Genre.Comedy, Genre.Romance ]
+    },
+    {
+        "title": "Fast Times at Ridgemont High",
+        "description": "A group of Southern California high school students are enjoying their most important subjects: sex, drugs, and rock n' roll.",
+        "genres": [ Genre.Comedy, Genre.Drama ]
+    },
+    {
+        "title": "American Pie",
+        "description": "Four teenage boys enter a pact to lose their virginity by prom night.",
+        "genres": [ Genre.Comedy ]
+    },
+    {
+        "title": "Pretty Woman",
+        "description": "A man in a legal but hurtful business needs an escort for some social events, and hires a beautiful prostitute he meets... only to fall in love.",
+        "genres": [ Genre.Comedy, Genre.Romance ]
+    },
+    {
+        "title": "Baywatch",
+        "description": "Devoted lifeguard Mitch Buchannon butts heads with a brash new recruit, as they uncover a criminal plot that threatens the future of the bay.",
+        "genres": [ Genre.Comedy, Genre.Action ]
+    },
+    {
+        "title": "Pitch Perfect",
+        "description": "Beca, a freshman at Barden University, is cajoled into joining The Bellas, her school's all-girls singing group.",
+        "genres": [ Genre.Comedy, Genre.Romance ]
+    },
+    {
+        "title": "Palm Springs",
+        "description": "Stuck in a time loop, two wedding guests develop a budding romance while living the same day over and over again.",
+        "genres": [ Genre.Comedy, Genre.Fantasy ]
+    },
+    {
+        "title": "We're the Millers",
+        "description": "A veteran pot dealer creates a fake family as part of his plan to move a huge shipment of weed into the U.S. from Mexico.",
+        "genres": [ Genre.Comedy, Genre.Adventure ]
+    },
+    {
+        "title": "Midsommar",
+        "description": "What begins as an idyllic retreat quickly devolves into an increasingly violent and bizarre competition at the hands of a pagan cult.",
+        "genres": [ Genre.Drama, Genre.Horror ]
+    },
+    {
+        "title": "Twilight",
+        "description": "When Bella Swan moves to a small town in the Pacific Northwest, she falls in love with Edward Cullen, a mysterious classmate who reveals himself to be a 108-year-old vampire.",
+        "genres": [ Genre.Drama, Genre.Fantasy ]
+    },
+    {
+        "title": "Promising Young Woman",
+        "description": "A young woman, traumatized by a tragic event in her past, seeks out vengeance against those who crossed her path.",
+        "genres": [ Genre.Drama ]
+    },
+    {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "description": "An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.",
+        "genres": [ Genre.Family, Genre.Fantasy ]
+    },
+    {
+        "title": "Soul",
+        "description": "After landing the gig of a lifetime, a New York jazz pianist suddenly finds himself trapped in a strange land between Earth and the afterlife.",
+        "genres": [ Genre.Family, Genre.Comedy ]
+    },
+    {
+        "title": "The Croods: A New Age",
+        "description": "The prehistoric family the Croods are challenged by a rival family the Bettermans, who claim to be better and more evolved.",
+        "genres": [ Genre.Family, Genre.Comedy ]
+    },
+    {
+        "title": "The Sandlot",
+        "description": "In the summer of 1962, a new kid in town is taken under the wing of a young baseball prodigy and his rowdy team, resulting in many adventures.",
+        "genres": [ Genre.Family, Genre.Comedy ]
+    },
+    {
+        "title": "Harry Potter and the Goblet of Fire",
+        "description": "Harry Potter finds himself competing in a hazardous tournament between rival schools of magic, but he is distracted by recurring nightmares.",
+        "genres": [ Genre.Family, Genre.Fantasy ]
+    },
+    {
+        "title": "Harry Potter and the Chamber of Secrets",
+        "description": "An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.",
+        "genres": [ Genre.Family, Genre.Fantasy ]
+    },
+    {
+        "title": "Spirited Away",
+        "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+        "genres": [ Genre.Family, Genre.Adventure ]
+    },
+    {
+        "title": "Hotel Transylvania: Transformania",
+        "description": "Drac's Pack is back, like you've never seen them before in the final chapter of 'Hotel Transylvania'.",
+        "genres": [ Genre.Family, Genre.Adventure ]
+    },
+    {
+        "title": "Tom and Jerry",
+        "description": "A chaotic battle ensues between Jerry Mouse, who has taken refuge in the Royal Gate Hotel, and Tom Cat, who is hired to drive him away before the day of a big wedding arrives.",
+        "genres": [ Genre.Family, Genre.Comedy ]
+    },
+    {
+        "title": "Moana",
+        "description": "In Ancient Polynesia, when a terrible curse incurred by the Demigod Maui reaches Moana's island, she answers the Ocean's call to seek out the Demigod to set things right.",
+        "genres": [ Genre.Family, Genre.Adventure ]
+    },
+    {
+        "title": "The Princess Bride",
+        "description": "A young boy's grandfather reads him the story of a farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in his quest to be reunited with his true love.",
+        "genres": [ Genre.Family, Genre.Fantasy ]
+    },
+    {
+        "title": "Stardust",
+        "description": "In a countryside town bordering on a magical land, a young man makes a promise to his beloved that he'll retrieve a fallen star by venturing into the magical realm.",
+        "genres": [ Genre.Family, Genre.Fantasy ]
+    },
+    {
+        "title": "Cars",
+        "description": "A hot-shot race-car named Lightning McQueen gets waylaid in Radiator Springs, where he finds the true meaning of friendship and family.",
+        "genres": [ Genre.Family, Genre.Comedy ]
+    },
+    {
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "description": "Harry Potter, Ron and Hermione return to Hogwarts School of Witchcraft and Wizardry for their third year of study.",
+        "genres": [ Genre.Family, Genre.Fantasy ]
+    },
+    {
+        "title": "Kung Fu Panda",
+        "description": "The Dragon Warrior has to clash against the savage Tai Lung as China's fate hangs in the balance.",
+        "genres": [ Genre.Family, Genre.Adventure ]
+    },
+    {
+        "title": "The Karate Kid",
+        "description": "A martial arts master agrees to teach karate to a bullied teenager.",
+        "genres": [ Genre.Family, Genre.Drama ]
+    },
+    {
+        "title": "Coco",
+        "description": "Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.",
+        "genres": [ Genre.Family, Genre.Adventure ]
+    },
+    {
+        "title": "Scooby-Doo",
+        "description": "After an acrimonious break up, the Mystery Inc. gang are individually brought to an island resort to investigate strange goings on.",
+        "genres": [ Genre.Family, Genre.Comedy ]
+    },
+    {
+        "title": "Jumanji",
+        "description": "When two kids find and play a magical board game, they release a man trapped in it for decades - and a host of dangers that can only be stopped by finishing the game.",
+        "genres": [ Genre.Family, Genre.Adventure ]
+    },
+    {
+        "title": "Zootopia",
+        "description": "In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy.",
+        "genres": [ Genre.Family, Genre.Adventure ]
+    },
+    {
+        "title": "Harry Potter and the Order of the Phoenix",
+        "description": "With their warning about Lord Voldemort's return scoffed at, Harry and Dumbledore are targeted by the Wizard authorities as an authoritarian bureaucrat slowly seizes power at Hogwarts.",
+        "genres": [ Genre.Family, Genre.Fantasy ]
+    },
+    
 ];
 
 export { Movies };
