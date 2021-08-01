@@ -1,1 +1,0 @@
-SELECT * FROM notification WHERE userId = $1;

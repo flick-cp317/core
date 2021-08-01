@@ -1,0 +1,1 @@
+SELECT * FROM notification WHERE notifiedUser = $1;
