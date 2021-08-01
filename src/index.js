@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { userRouter, theatreRouter, recordRouter, movieRouter } from './api'; 
+import { userRouter, theatreRouter, recordRouter, movieRouter, notificationRouter} from './api'; 
 import { initializeDatabase } from './db';
 
 const app = express();
@@ -10,6 +10,7 @@ app.use('/api/user', userRouter);
 app.use('/api/theatre', theatreRouter);
 app.use('/api/record', recordRouter);
 app.use('/api/movie', movieRouter);
+app.use('/api/notification', notificationRouter);
 
 const port = 8080;
 
