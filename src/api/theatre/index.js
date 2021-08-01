@@ -2,6 +2,8 @@ import { Router } from 'express';
 import { promises } from 'fs';
 import { pool } from '../../db';
 import auth from '../user/auth';
+import { NotificationType } from '../../notificationTypes';
+import { addNotification } from '../notification/addNotification';
 
 const theatreRouter = Router();
 
@@ -212,6 +214,25 @@ theatreRouter.post('/:theatreid/add/', auth, async (req, res) => {
         return;
     }
 
+    //get array of theater users
+    sql = await promises.readFile(
+        './src/db/sql/theatre/getTheatreMembers.sql',
+        'utf-8',
+    );
+    requestArray = [ theatreid ];
+    result = await pool.query(sql, requestArray);
+    console.log(result.rows);
+
+    //loop through the users and send notifications
+    for(let i = 0; i< result.rows.length; i++){
+         if(result.rows[i].userid === userid){
+             await addNotification(result.rows[i].userid, NotificationType.TheatreInvite);
+         }else{
+            await addNotification(result.rows[i].userid, NotificationType.NewMember);
+         }
+    }
+
+    
     res.status(200).json({});
     return;
 });

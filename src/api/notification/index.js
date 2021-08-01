@@ -7,7 +7,6 @@ const notificationRouter = Router();
 
 
 // responds with the notifications for a specific user
-//needs testing on accuracy
 notificationRouter.get('/user/:userid/', auth, async (req, res) => {
     const { userid } = req.params;
 
@@ -33,14 +32,13 @@ notificationRouter.get('/user/:userid/', auth, async (req, res) => {
         return;
     }
 
-    res.status(200).json({error:"this needs to be tested (and implemented)"});
+    res.status(200).json(result.rows);
 
     return;
 });
 
 
 // deletes all of a users notifications
-//needs testing on accuracy
 notificationRouter.delete('/user/:userid/', auth, async (req, res) => {
     const { userid } = req.params;
 
@@ -67,7 +65,6 @@ notificationRouter.delete('/user/:userid/', auth, async (req, res) => {
 });
 
 // deletes a single of a users notifications
-//needs testing on accuracy
 notificationRouter.delete('/:notificationid/', auth, async (req, res) => {
     const { notificationid } = req.params;
     const userid = req.user.id;
