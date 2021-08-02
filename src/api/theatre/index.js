@@ -88,6 +88,12 @@ theatreRouter.post('/new/', auth, async (req, res) => {
             res.status(400).json({});
             return;
         }
+        
+        // length of new username is not valid
+        if (theatreName.length < 3 || theatreName.length > 30){
+            res.status(400).json({});
+            return;
+        }
     
         let sql, requestArray, result;
     
