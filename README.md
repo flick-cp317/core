@@ -20,3 +20,12 @@ Once the repository is cloned, there are a couple steps needed to get going on y
     1. Variables are denoted with the notation `TEST=1` (variable TEST is equal to 1) and should be on separate lines in the file
 
 From here you should be able to run the project with `npm start`. The project is accessible on `http://localhost:8080/`.
+
+# Scripts
+
+There are some built-in scripts that make managing the database a bit easier:
+
+1. `npm run clean`: Clears all info in the database
+1. `npm run populate`: Populates the database with the following information
+    1. Around 100 movies
+    2. Five test users named `testuser0` through `testuser4`, all have the password `password123`
