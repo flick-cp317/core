@@ -20,8 +20,9 @@ async function initializeDatabase() {
         await pool.query(sql);
         console.log("Database initialized");
         return;
-    } catch {
+    } catch (err) {
         console.log("Database couldn't be initialized");
+        console.log(err);
     }
 }
 
