@@ -19,6 +19,9 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.6.0"
   },
+  "engines": {
+    "node": "16.4.2"
+  },
   "devDependencies": {
     "eslint": "^7.30.0",
     "nodemon": "^2.0.12"
