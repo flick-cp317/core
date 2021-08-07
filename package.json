@@ -4,7 +4,8 @@
   "description": "Flick service",
   "type": "module",
   "scripts": {
-    "start": "nodemon -r dotenv/config --experimental-specifier-resolution=node src/index.js",
+    "start": "node -r dotenv/config --experimental-specifier-resolution=node src/index.js",
+    "start-dev": "nodemon -r dotenv/config --experimental-specifier-resolution=node src/index.js",
     "clean": "node -r dotenv/config --experimental-specifier-resolution=node src/script/clean.js",
     "populate": "node -r dotenv/config --experimental-specifier-resolution=node src/script/populate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
