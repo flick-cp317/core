@@ -3,17 +3,12 @@ import { promises } from 'fs';
 
 const { Pool } = postgres;
 
-const pool = new Pool(
-    process.env.DATABASE_URL === undefined ? {
-        host: process.env.PGHOST,
-        database: process.env.PGDATABASE,
-        user: process.env.PGUSER,
-        password: process.env.PGPASSWORD,
-    } :
-    {
-        connectionString: process.env.DATABASE_URL,
-    }
-);
+const devConfig = `postgresql://${process.env.PGUSER}:${process.env.PGPASSWORD}@${process.env.PGHOST}:5432/${process.env.PGDATABASE}`;
+const prodConfig = process.env.DATABASE_URL;
+
+const pool = new Pool({
+    connectionString: process.env.NODE_ENV === "production" ? prodConfig : devConfig,
+});
 
 async function initializeDatabase() {
     console.log("Trying to initialize database");
